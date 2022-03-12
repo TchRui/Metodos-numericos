@@ -6,6 +6,9 @@ class igualacion:
         x = Symbol('x')
         y = Symbol('y')
 
-        resultado =solve([a*x+b*y+c,d*x+e*y+f],[x,y])
+        resultado = solve([a*x+b*y+c,d*x+e*y+f],[x,y])
+        print(resultado)
+        
         messagebox.showinfo("Aviso", "Los valores quedan de la siguiente manera: " + str(resultado))
-i = igualacion()
+
+objeto = igualacion()

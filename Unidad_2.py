@@ -7,6 +7,7 @@ from tkinter import ttk
 from Reduccion_window_variables import entorno_reduccion
 from Igualacion_window_variables import  entorno_igualacion
 from sustitucion_window_variables import entorno_sustitucion
+from punto_fijo_ventana import entorno_punto_fijo
 
 class unidad_2:
     def principal_unidad_2(self):
@@ -29,8 +30,13 @@ class unidad_2:
         options = [
             "Reduccion",
             "Igualacion",
-            "Sustitucion",  
+            "Sustitucion",
+            "Punto fijo",
+            "Metodo grafico",
+            "Interpolacion",
+            "Biseccion", 
         ]
+
         desplegable_unidad_2 = ttk.Combobox(self.winU2, width=21, values=options, state="readonly", font="Times", height="1", justify = "center")
         desplegable_unidad_2.place(relx=0.215,rely=0.475)
         desplegable_unidad_2.current(0)
@@ -48,6 +54,18 @@ class unidad_2:
                 s = entorno_sustitucion()
                 s.principal_sustitucion()
 
+            if desplegable_unidad_2.get() == "Punto fijo":
+                p = entorno_punto_fijo()
+                p.principal_punto_fijo()
+
+            if desplegable_unidad_2.get() == "Metodo grafico":
+                pass
+
+            if desplegable_unidad_2.get() == "Interpolacion":
+                pass
+
+            if desplegable_unidad_2.get() == "Biseccion":
+                pass
 
         boption = Button(self.winU2, text="Seleccionar Programa", bg='#CCD9CE', command=funciones, font="Times", )
         boption.place(relx=0.28, rely=0.8)
