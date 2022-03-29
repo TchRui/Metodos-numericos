@@ -5,6 +5,7 @@ from tkinter import messagebox as msb
 from Igualacion import igualacion
 
 class entorno_igualacion:
+    
     def principal_igualacion(self):
         igualacion_window = Toplevel()
 

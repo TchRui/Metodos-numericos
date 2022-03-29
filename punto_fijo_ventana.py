@@ -22,14 +22,14 @@ class entorno_punto_fijo:
         lblTitulo = Label(punto_fijo_window, text="Unidad 2: Método del punto fijo", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.place(relx=0.175, rely=0.125)
 
-        options =["ecuación exp(-x)-x"]
+        options =["Ecuación exp(-x)-x"]
 
         cmb = ttk.Combobox(punto_fijo_window, width=21, values=options, state="readonly", font = "Times", height="1", justify = "center")
         cmb.place(relx=0.215,rely=0.475)
         cmb.current(0)
 
         def opciones():
-            if cmb.get() == "ecuación exp(-x)-x":
+            if cmb.get() == "Ecuación exp(-x)-x":
                 p1 = procedimiento_exp()
                 p1.procedimiento()
 

@@ -8,7 +8,7 @@ from Reduccion_window_variables import entorno_reduccion
 from Igualacion_window_variables import  entorno_igualacion
 from sustitucion_window_variables import entorno_sustitucion
 from punto_fijo_ventana import entorno_punto_fijo
-
+import graficadora
 class unidad_2:
     def principal_unidad_2(self):
         self.winU2 = Toplevel()
@@ -31,8 +31,8 @@ class unidad_2:
             "Reduccion",
             "Igualacion",
             "Sustitucion",
-            "Punto fijo",
             "Metodo grafico",
+            "Punto fijo",
             "Interpolacion",
             "Biseccion", 
         ]
@@ -59,7 +59,7 @@ class unidad_2:
                 p.principal_punto_fijo()
 
             if desplegable_unidad_2.get() == "Metodo grafico":
-                pass
+                i = graficadora
 
             if desplegable_unidad_2.get() == "Interpolacion":
                 pass

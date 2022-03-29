@@ -14,7 +14,7 @@ class EntornoGrafico:
         mainwindow.geometry(posicion)
 
         mainwindow.title('Metodos numéricos - Programa integrador')
-        mainwindow.config(bg = '#7FADA9')
+        mainwindow.config(bg='#7FADA9')
         
         mainwindow.resizable(0,0)
 

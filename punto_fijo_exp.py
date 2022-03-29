@@ -2,10 +2,12 @@ from tkinter import *
 from tkinter import messagebox 
 from matplotlib import pyplot as plt
 import numpy as np 
+import sympy as sp
 
 class procedimiento_exp:
 
     def procedimiento(self):
+        
         def fx(x):
             return np.exp(-x)-x
 
@@ -22,7 +24,7 @@ class procedimiento_exp:
             xi=gx(xi)
             i=i+1
 
-       
+        print("El valor de x, tal que f(x)=0 es : ",xi)
 
         x=np.linspace(0,1.5,100)
         plt.title("Metodo de aproximaciones susecivas")
@@ -35,6 +37,5 @@ class procedimiento_exp:
 
         plt.grid()
         plt.show()
-        messagebox.showinfo("Aviso","El valor de x, tal que f(x)=0 es : "+ str(xi))
-        
+
 p = procedimiento_exp()
