@@ -1,10 +1,14 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
+from tkinter import simpledialog
+import numpy as np
 
+from ProgramaJacobi import Programa_Jacobi
 class Gui_metodo_jacobi:
     def procedimiento_jacobi(self):
         #crea una ventana igual a sustitucion
-        self.winJacobi = Tk()
+        self.winJacobi = Toplevel()
         ancho_ventana = 625
         alto_ventana = 450
 
@@ -103,6 +107,128 @@ class Gui_metodo_jacobi:
         caja_r3 = StringVar()
         caja_r3 = Entry(self.winJacobi, width="5", textvariable=caja_r3,font="Times",justify="center")
         caja_r3.grid(row=3, column=7, padx=10, pady=15)
+
+        lbltole = Label(self.winJacobi, text="Tolerancia", bg="#CCD9CE", font="Times", width="10", height="1")
+        lbltole.grid(row=4, column=0, padx=10, pady=15)
+
+        caja_tole = StringVar()
+        caja_tole = Entry(self.winJacobi, width="10", textvariable=caja_tole,font="Times",justify="center")
+        caja_tole.grid(row=4, column=1, padx=10, pady=15)
+
+
+
+        def funcion():
+            x1 = caja_x1.get()
+            x2 = caja_x2.get()
+            x3 = caja_x3.get()
+            y1 = caja_y1.get()
+            y2 = caja_y2.get()
+            y3 = caja_y3.get()
+            z1 = caja_z1.get()
+            z2 = caja_z2.get()
+            z3 = caja_z3.get()
+            r1 = caja_r1.get()
+            r2 = caja_r2.get()
+            r3 = caja_r3.get()
+            tole = caja_tole.get()
+            if x1 == "" or x2 == "" or x3 == "" or y1 == "" or y2 == "" or y3 == "" or z1 == "" or z2 == "" or z3 == "" or r1 == "" or r2 == "" or r3 == "" or tole == "":
+                messagebox.showerror("Error", "Uno o mas campos estan vacios")
+            else:
+                try:
+                    x1 = float(x1)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de x1 no es valido")
+                    caja_x1.delete(0, END)
+                try:
+                    x2 = float(x2)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de x2 no es valido")
+                    caja_x2.delete(0, END)
+
+                try:
+                    x3 = float(x3)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de x3 no es valido")
+                    caja_x3.delete(0, END)    
+
+                try:
+                    y1 = float(y1)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de y1 no es valido")
+                    caja_y1.delete(0, END)
+                
+                try:
+                    y2 = float(y2)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de y2 no es valido")
+                    caja_y2.delete(0, END)
+
+                try:
+                    y3 = float(y3)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de y3 no es valido")
+                    caja_y3.delete(0, END)
+
+                try:
+                    z1 = float(z1)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de z1 no es valido")
+                    caja_z1.delete(0, END)
+
+                try:
+                    z2 = float(z2)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de z2 no es valido")
+                    caja_z2.delete(0, END)
+
+                try:
+                    z3 = float(z3)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de z3 no es valido")
+                    caja_z3.delete(0, END)
+
+                try:
+                    r1 = float(r1)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de r1 no es valido")
+                    caja_r1.delete(0, END)
+
+                try:
+                    r2 = float(r2)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de r2 no es valido")
+                    caja_r2.delete(0, END)
+
+                try:
+                    r3 = float(r3)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de r3 no es valido")
+                    caja_r3.delete(0, END)
+                
+                try:
+                    tole = float(tole)
+                except ValueError:
+                    messagebox.showerror("Error", "El valor de tole no es valido")
+                    caja_tole.delete(0, END)
+
+                A = np.array([[x1, y1, z1], [x2, y2, z2], [x3, y3, z3]])
+                B = [r1,r2,r3]
+                print(A)
+                print("")
+                print(B)
+                print("")
+                n = 3
+
+                tool = tole
+                error = 100000
+                nitermax = 200
+                #Se crea una instancia de la clase Jacobi
+                j = Programa_Jacobi()
+                j.procedimiento_jacobi(n,A,B,tool,error,nitermax)
+                
+        #Boton de calcular
+        boton_calcular = Button(self.winJacobi, text="Calcular", bg="#CCD9CE", font="Times", command=funcion, width="10", height="1")
+        boton_calcular.grid(row=4, column=0, padx=10, pady=15, columnspan=10)
 
         self.winJacobi.mainloop()
 
