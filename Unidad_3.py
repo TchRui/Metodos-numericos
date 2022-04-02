@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 
 from GUI_jacobi import Gui_metodo_jacobi
-
+from GUI_Gauss import GUI_Gauss_Seidel
 class unidad_3:
     def Gui_unidad_3(self):
         # Crea una ventana igual a la unidad 2
@@ -34,10 +34,11 @@ class unidad_3:
                 j.procedimiento_jacobi()
 
             elif desplegable_unidad_3.get() == "Metodo de Gauss-Seidel":
-                pass
+                g = GUI_Gauss_Seidel()
+                g.procedimiento_gauss()
+
             elif desplegable_unidad_3.get() == "Metodo de Newton-Raphson":
                 pass
-
 
         btnAceptar = Button(self.winU3, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
         btnAceptar.place(relx=0.28, rely=0.8)
