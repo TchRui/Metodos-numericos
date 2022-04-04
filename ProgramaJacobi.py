@@ -5,6 +5,8 @@ import numpy as np
 
 class Programa_Jacobi:
     def procedimiento_jacobi(self,n,A,B,tool,error,nitermax):
+        lista = []
+
         alpha = 3 * n
         ADD = np.dot(A,A.T) + alpha*np.identity(n)
         A = ADD
@@ -47,13 +49,16 @@ class Programa_Jacobi:
                 x[i] = d/A[i][i]
             error = np.linalg.norm(x-x1)
             x1 = np.copy(x)
+
+            cadena_resultados = "Iteracion: " + str(niter) + "  |   x: "+ str(x) + "  |   Error: " + str(error/np.linalg.norm(B))
+            lista.append(cadena_resultados)
+
             print("Iteracion: ", niter)
             print("x: ", x)
             print("Error en la iteracion: ", niter, "es: ", error/np.linalg.norm(B))
             niter += 1
             Niter.append(niter)
             Error.append(error)
-
 
         x = Niter
         y = Error
@@ -67,3 +72,6 @@ class Programa_Jacobi:
         plt.legend()
         plt.grid()
         plt.show()
+        return lista
+
+        

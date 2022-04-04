@@ -5,6 +5,7 @@ from tkinter import simpledialog
 import numpy as np
 
 from ProgramaJacobi import Programa_Jacobi
+from GUI_Resultados import Resultados
 class Gui_metodo_jacobi:
     def procedimiento_jacobi(self):
         #crea una ventana igual a sustitucion
@@ -224,7 +225,12 @@ class Gui_metodo_jacobi:
                 nitermax = 200
                 #Se crea una instancia de la clase Jacobi
                 j = Programa_Jacobi()
-                j.procedimiento_jacobi(n,A,B,tool,error,nitermax)
+                lista = j.procedimiento_jacobi(n,A,B,tool,error,nitermax)
+
+                for i in range(len(lista)):
+                    print(lista[i])
+                R = Resultados()
+                R.mostrar(lista)
                 
         #Boton de calcular
         boton_calcular = Button(self.winJacobi, text="Calcular", bg="#CCD9CE", font="Times", command=funcion, width="10", height="1")

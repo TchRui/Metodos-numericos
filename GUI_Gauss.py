@@ -4,6 +4,7 @@ from tkinter import messagebox
 import numpy as np
 
 from ProgramaGauss import Programa_Gauss_Seiel
+from GUI_Resultados import Resultados
 class GUI_Gauss_Seidel:
 
     def procedimiento_gauss(self):
@@ -248,12 +249,12 @@ class GUI_Gauss_Seidel:
                 ADD = np.dot(A,A.T) + alpha*np.identity(n)
                 A = ADD
                 x = np.zeros(len(A))
-                ea = 10**10000
                 tool = tole
 
                 p = Programa_Gauss_Seiel()
-                p.SOR(A,B,x,imax,tole,omega,tool)
-
+                x,lista = p.SOR(A,B,x,imax,tole,omega,tool)
+                R = Resultados()
+                R.mostrar(lista)
 
         #Boton de calcular
         boton_calcular = Button(self.winJacobi, text="Calcular", bg="#CCD9CE", font="Times", command=funcion, width="10", height="1")

@@ -3,6 +3,7 @@ from tkinter import messagebox
 import sympy as sp
 
 from ProgramaNewton import Programa_Newton
+from GUI_Resultados import Resultados
 class GUI_Newton_Raphson:
     def interfaz_newton(self):
         x,y,z,w,sin,cos,tan,cot,sec,csc,asin,acos,atan,acot,asec,acsc = sp.symbols('x y z w sin cos tan cot sec csc asin acos atan acot asec acsc')
@@ -84,7 +85,11 @@ class GUI_Newton_Raphson:
             
 
             N = Programa_Newton()
-            N.procedimiento_newton(f1,f2,x,y,iteraciones)
+            lista = N.procedimiento_newton(f1,f2,x,y,iteraciones)
+            for i in range(len(lista)):
+                print(lista[i])
+            R = Resultados()
+            R.mostrar(lista)
 
         btnCalcular = Button(self.winNewton, text="Calcular", bg="#CCD9CE", font="Times", command=recolector)
         btnCalcular.grid(row=7, column=0,columnspan=2, padx=10, pady=5)

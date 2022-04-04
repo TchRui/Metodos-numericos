@@ -27,16 +27,14 @@ class Programa_Newton:
             dx2 = eval(str(deriv2x))
             dy2 = eval(str(deriv2y))
 
-            print(dx1)
-            print(dy1)
-            print(dx2)
-            print(dy2)
             vector = np.array([[dx1,dy1],[dx2,dy2]])
 
             return vector
                             
         N = int(iteraciones) + 1
         vector = np.array([x,y])
+
+        lista_resultados =[""]
 
         for k in range(N):
             vectorold = vector
@@ -48,7 +46,9 @@ class Programa_Newton:
             vector = vector - np.dot(Jinv,F(vector))
 
             e = np.linalg.norm(vector - vectorold)
-
-            print(k,vector,e)
-            if e < 1e-10:
+            cadena_resultados = ("Iteracion: " + str(k) + " |   Resultado: " + str(vector) + "    |   Error: " + str(e))
+            lista_resultados.append(cadena_resultados)
+            if e <= 0.0:
                 break
+        
+        return lista_resultados
