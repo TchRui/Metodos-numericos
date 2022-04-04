@@ -237,7 +237,7 @@ class GUI_Gauss_Seidel:
                     messagebox.showerror("Error", "El valor de omega no es valido")
                     caja_omega.delete(0, END)
 
-                '''A = np.array([[x1, y1, z1], [x2, y2, z2], [x3, y3, z3]])
+                A = np.array([[x1, y1, z1], [x2, y2, z2], [x3, y3, z3]])
                 B = [r1,r2,r3]
                 n = 3
                 print(A)
@@ -249,18 +249,10 @@ class GUI_Gauss_Seidel:
                 A = ADD
                 x = np.zeros(len(A))
                 ea = 10**10000
-                tool = tole'''
-
-                n = 3
-                A = np.random.rand(n, n)
-                B = np.random.rand(n,)    
-                x = np.zeros(len(A))
-                imax = 200
-                tool = 0.0001
-                omega = 1
+                tool = tole
 
                 p = Programa_Gauss_Seiel()
-                p.SOR(A,B,x,tole,imax,omega,tool)
+                p.SOR(A,B,x,imax,tole,omega,tool)
 
 
         #Boton de calcular

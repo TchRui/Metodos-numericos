@@ -1,5 +1,7 @@
 class Programa_Gauss_Seiel:
     def SOR(self,A,B,x,imax,es,omega,tool):
+        ea = 0
+
         n = len(x)
         for i in range(n):
             dummy = A[i][i]

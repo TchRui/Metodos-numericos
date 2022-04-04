@@ -8,9 +8,9 @@ from ProgramaJacobi import Programa_Jacobi
 class Gui_metodo_jacobi:
     def procedimiento_jacobi(self):
         #crea una ventana igual a sustitucion
-        self.winJacobi = Toplevel()
+        self.winJacobi = Tk()
         ancho_ventana = 625
-        alto_ventana = 450
+        alto_ventana = 380
 
         x_ventana = self.winJacobi.winfo_screenwidth() // 2 - ancho_ventana // 2
         y_ventana = self.winJacobi.winfo_screenheight() // 2 - alto_ventana // 2
@@ -109,11 +109,11 @@ class Gui_metodo_jacobi:
         caja_r3.grid(row=3, column=7, padx=10, pady=15)
 
         lbltole = Label(self.winJacobi, text="Tolerancia", bg="#CCD9CE", font="Times", width="10", height="1")
-        lbltole.grid(row=4, column=0, padx=10, pady=15)
+        lbltole.grid(row=4, column=2,columnspan=2, padx=10, pady=15)
 
         caja_tole = StringVar()
         caja_tole = Entry(self.winJacobi, width="10", textvariable=caja_tole,font="Times",justify="center")
-        caja_tole.grid(row=4, column=1, padx=10, pady=15)
+        caja_tole.grid(row=4, column=4,columnspan=2, padx=10, pady=15)
 
 
 
@@ -212,7 +212,7 @@ class Gui_metodo_jacobi:
                     caja_tole.delete(0, END)
 
                 A = np.array([[x1, y1, z1], [x2, y2, z2], [x3, y3, z3]])
-                B = [r1,r2,r3]
+                B = np.array([r1,r2,r3])
                 print(A)
                 print("")
                 print(B)
@@ -228,7 +228,7 @@ class Gui_metodo_jacobi:
                 
         #Boton de calcular
         boton_calcular = Button(self.winJacobi, text="Calcular", bg="#CCD9CE", font="Times", command=funcion, width="10", height="1")
-        boton_calcular.grid(row=4, column=0, padx=10, pady=15, columnspan=10)
+        boton_calcular.grid(row=5, column=0, padx=10, pady=15, columnspan=10)
 
         self.winJacobi.mainloop()
 
