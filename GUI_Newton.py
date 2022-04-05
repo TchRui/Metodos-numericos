@@ -71,12 +71,12 @@ class GUI_Newton_Raphson:
                 messagebox.showerror("Error", "Ingrese la funcion 2")
 
             try:
-                x = int(cajax.get())
+                x = float(cajax.get())
             except ValueError:
                 messagebox.showerror("Error", "Ingrese un valor numerico en x")
             
             try:
-                y = int(cajay.get())
+                y = float(cajay.get())
             except ValueError:
                 messagebox.showerror("Error", "Ingrese un valor numerico en y")
 

@@ -34,7 +34,7 @@ class Programa_Newton:
         N = int(iteraciones) + 1
         vector = np.array([x,y])
 
-        lista_resultados =[""]
+        lista_resultados = [""]
 
         for k in range(N):
             vectorold = vector
@@ -46,8 +46,10 @@ class Programa_Newton:
             vector = vector - np.dot(Jinv,F(vector))
 
             e = np.linalg.norm(vector - vectorold)
+
             cadena_resultados = ("Iteracion: " + str(k) + " |   Resultado: " + str(vector) + "    |   Error: " + str(e))
             lista_resultados.append(cadena_resultados)
+            
             if e <= 0.0:
                 break
         
