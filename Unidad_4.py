@@ -3,10 +3,11 @@ from tkinter import *
 from tkinter import ttk
 from unicodedata import name
 
+from GUI_Taylor import Gui_Taylor
 class unidad_4:
     def Gui_unidad_4(self):
         # Crea una ventana igual a la unidad 2
-        self.winu4 = Toplevel()
+        self.winu4 = Tk()
         ancho_ventana = 425
         alto_ventana = 400
         x_ventana = self.winu4.winfo_screenwidth() // 2 - ancho_ventana // 2
@@ -31,7 +32,8 @@ class unidad_4:
         desplegable_unidad_3.current(0)
 
         def funciones():
-            pass
+            if desplegable_unidad_3.get() == "Series de Taylor":
+                Gui_Taylor().GUI()
 
         btnAceptar = Button(self.winu4, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
         btnAceptar.place(relx=0.28, rely=0.8)

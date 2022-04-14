@@ -2,12 +2,13 @@ from tkinter import *
 from tkinter import messagebox
 
 from ProgramaTaylor import Programa_Taylor
+from  GUI_Resultados import Resultados
 
 class Gui_Taylor:
     def GUI(self):
         gui = Tk()
         ancho_ventana = 425
-        alto_ventana = 400
+        alto_ventana = 435
         x_ventana = gui.winfo_screenwidth() // 2 - ancho_ventana // 2
         y_ventana = gui.winfo_screenheight() // 2 - alto_ventana // 2
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
@@ -40,10 +41,27 @@ class Gui_Taylor:
         cajah = Entry(gui, width=20, textvariable=cajah, font="Times",justify="center")
         cajah.grid(row=3, column=1, padx=20, pady=15)
         
+        lbldecremento = Label(gui, text="decremento", bg="#CCD9CE", font="Times", width="10", height="1")
+        lbldecremento.grid(row=4, column=0, padx=20, pady=15)
+
+        cajadecremento = Variable()
+        cajadecremento = Entry(gui, width=20, textvariable=cajadecremento, font="Times",justify="center")
+        cajadecremento.grid(row=4, column=1, padx=20, pady=15)
+
+        lblTolerancia  = Label(gui, text="Tolerancia", bg="#CCD9CE", font="Times", width="10", height="1")
+        lblTolerancia.grid(row=5, column=0, padx=20, pady=15)
+
+        cajatolerancia = Variable()
+        cajatolerancia = Entry(gui, width=20, textvariable=cajatolerancia, font="Times",justify="center")
+        cajatolerancia.grid(row=5, column=1, padx=20, pady=15)
+
+        
         def funciones():
             funcion = cajafuncion.get()
             x = float(cajax.get())
             h = float(cajah.get())
+            decremento = float(cajadecremento.get())
+            tolerancia = float(cajatolerancia.get())
 
             if funcion == "":
                 messagebox.showerror("Error", "Ingrese la funcion a derivar")
@@ -62,10 +80,28 @@ class Gui_Taylor:
                 messagebox.showerror("Error", "Ingrese un valor numerico para h")
                 cajah.delete(0, END)
 
-            Programa_Taylor().Procedimiento_Taylor(funcion, x, h)
+            try:
+                if decremento == "":
+                    messagebox.showerror("Error", "Ingrese un valor numerico para el decremento")
+            except ValueError:
+                messagebox.showerror("Error", "Ingrese un valor numerico para el decremento")
+                cajadecremento.delete(0, END)
+            
+            try:
+                if tolerancia == "":
+                    messagebox.showerror("Error", "Ingrese un valor numerico para la tolerancia")
+            except ValueError:
+                messagebox.showerror("Error", "Ingrese un valor numerico para la tolerancia")
+                cajatolerancia.delete(0, END)
+
+            lista = Programa_Taylor().Procedimiento_Taylor(funcion, x, h, decremento, tolerancia)
+            for i in lista:
+                print(i)
+            r = Resultados()
+            r.mostrar(lista)
 
         btnAceptar = Button(gui, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
-        btnAceptar.grid(row=4, column=0, columnspan=2, padx=20, pady=15)
+        btnAceptar.grid(row=6, column=0,columnspan=2,padx=20, pady=15)
         btnAceptar.config(activebackground="#94A9B9", width="16", height="1")
 
         gui.mainloop()
