@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 
 from ProgramaTaylor import Programa_Taylor
-from  GUI_Resultados import Resultados
+from GUI_Resultados import Resultados
 
 class Gui_Taylor:
     def GUI(self):
