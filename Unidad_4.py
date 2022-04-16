@@ -21,7 +21,7 @@ class unidad_4:
         self.winu4.config(bg='#7FADA9')
         self.winu4.resizable(0, 0)
 
-        lblTitulo = Label(self.winu4, text="Unidad 4: Derivadas numericas", bg="#CCD9CE", font="Times", width="25", height="2")
+        lblTitulo = Label(self.winu4, text="Unidad 4: funciones numericas", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.place(relx=0.175, rely=0.125)
 
         

@@ -46,6 +46,11 @@ class Programa_simpson_3_8:
         error = abs((simpson-valor_integral)/simpson)*100
         print("El error aproximado: ",error)
 
+        lista_resultado = []
+        cadena_resultado = "Valor aproximado: " + str(simpson)  + "   |   Valor real de la integral: " + str(valor_integral) + "   |   Error: " + str(error) + "%"
+        lista_resultado.append(cadena_resultado)
+        
+        return lista_resultado
 if __name__ == "__main__":
     p = Programa_simpson_3_8()
     p.Procedimiento_simpson()

@@ -3,6 +3,7 @@ from tkinter import ttk
 
 from Unidad_2 import unidad_2
 from Unidad_3 import unidad_3
+from Unidad_4 import unidad_4
 class EntornoGrafico:
     def menu(self):
         mainwindow = Tk()
@@ -45,6 +46,10 @@ class EntornoGrafico:
                 #mainwindow.withdraw()
                 u = unidad_3
                 u.Gui_unidad_3(self)
+            
+            elif cmb.get() == "Unidad 4":
+                u = unidad_4
+                u.Gui_unidad_4(self)
 
         bunidad = Button(mainwindow, text = "Seleccionar unidad", bg = '#CCD9CE', command = acciones, font = "Times")
         bunidad.place(relx=0.28, rely=0.8)
