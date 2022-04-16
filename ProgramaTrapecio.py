@@ -2,10 +2,12 @@ import sympy as sp
 from tkinter import messagebox
 class Programa_trapecio:
     def Procedimiento_trapecio(self,función,a,b):
+        #Limite inferior
         x = a
         valor_a = eval(función)
         print(valor_a)
 
+        #Limite superior
         x = b
         valor_b = eval(función)
         print(valor_b)

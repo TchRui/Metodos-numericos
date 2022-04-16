@@ -4,9 +4,9 @@ from tkinter import messagebox
 import sympy as sp
 
 from GUI_Resultados import Resultados
-from ProgramaTrapecio import Programa_trapecio
+from ProgramaSimpson13 import Programa_simpson_1_3
 
-class Gui_Trapecio:
+class Gui_Simpson13:
     def GUI(self):
         gui = Tk()
         ancho_ventana = 425
@@ -19,7 +19,7 @@ class Gui_Trapecio:
         gui.config(bg='#7FADA9')
         gui.resizable(0, 0)
 
-        lblTitulo = Label(gui, text="Regla del trapecio", bg="#CCD9CE", font="Times", width="25", height="2")
+        lblTitulo = Label(gui, text="Metodo Simpson 1/3", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.grid(row=0, column=0, columnspan=2, padx=20, pady=15)
 
         lblfuncion2 = Label(gui, text="f'(x)", bg="#CCD9CE", font="Times", width="10", height="1")
@@ -66,8 +66,8 @@ class Gui_Trapecio:
                 messagebox.showerror("Error", "Ingrese un valor numerico para h")
                 cajab.delete(0, END)
 
-            p = Programa_trapecio()
-            lista = p.Procedimiento_trapecio(funcion, a, b)
+            p = Programa_simpson_1_3()
+            lista = p.Procedimiento_simpson(funcion, a, b)
         
             for i in lista:
                 print(i)
@@ -81,5 +81,5 @@ class Gui_Trapecio:
         gui.mainloop()
 
 if __name__ == "__main__":
-    gui = Gui_Trapecio()
+    gui = Gui_Simpson13()
     gui.GUI()

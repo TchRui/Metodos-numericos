@@ -4,6 +4,9 @@ from tkinter import ttk
 from unicodedata import name
 
 from GUI_Taylor import Gui_Taylor
+from GUI_Trapecio import Gui_Trapecio
+from GUI_Simpson13 import Gui_Simpson13
+from GUI_Simpson38 import Gui_Simpson38
 class unidad_4:
     def Gui_unidad_4(self):
         # Crea una ventana igual a la unidad 2
@@ -21,6 +24,7 @@ class unidad_4:
         lblTitulo = Label(self.winu4, text="Unidad 4: Derivadas numericas", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.place(relx=0.175, rely=0.125)
 
+        
         options = ["Series de Taylor",
                     "Metodo del trapecio",
                     "Metodo de Simpson 1/3",
@@ -33,7 +37,21 @@ class unidad_4:
 
         def funciones():
             if desplegable_unidad_3.get() == "Series de Taylor":
-                Gui_Taylor().GUI()
+                a = Gui_Taylor()
+                a.GUI()
+            
+            if desplegable_unidad_3.get() == "Metodo del trapecio":
+                b = Gui_Trapecio()
+                b.GUI()
+            
+            if desplegable_unidad_3.get() == "Metodo de Simpson 1/3":
+                c = Gui_Simpson13()
+                c.GUI()
+            
+            if desplegable_unidad_3.get() == "Metodo de Simpson 3/8":
+                d = Gui_Simpson38()
+                d.GUI()
+            
 
         btnAceptar = Button(self.winu4, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
         btnAceptar.place(relx=0.28, rely=0.8)
