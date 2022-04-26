@@ -2,15 +2,15 @@ import sympy as sp
 
 class Programa_3_puntos:
     def procedimiento_3_puntos(self, funcion, x, h):
-        x_temporal = x
+        x0 = x
         
         #Evaluacion de la funcion en x - h
-        x = x_temporal - h
+        x = x0 - h
         valor_a = eval(funcion)
         print("El valor de la funcion en x - h",valor_a)
 
         #Evaluacion de la funcion en x + h
-        x = x_temporal + h
+        x = x0 + h
         valor_b = eval(funcion)
         print("El valor de la funcion en x + h",valor_b)
 
@@ -22,7 +22,7 @@ class Programa_3_puntos:
         x = sp.Symbol('x')
         derivada_real = sp.diff(funcion, x)
 
-        x = x_temporal
+        x = x0
         valor_derivada_real = eval(str(derivada_real))
         print("Valor real de la derivada: ",valor_derivada_real)
 
