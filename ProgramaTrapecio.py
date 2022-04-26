@@ -14,6 +14,7 @@ class Programa_trapecio:
 
         resultado = ((valor_a + valor_b) / 2) * (b - a)
 
+        #Aquí se realiza la integracion para obtener el resultado real
         x = sp.Symbol('x')
         integral = sp.integrate(función, (x, a, b))
 
@@ -23,6 +24,7 @@ class Programa_trapecio:
 
         print("Valor aproximado: ",resultado)
 
+        #Calculamos el error
         error_aprox = abs((valor_integral - resultado)/valor_integral)*100
 
         lista_resultado = []
@@ -30,6 +32,7 @@ class Programa_trapecio:
         cadena_resultado = "Valor aproximado: " + str(resultado)  + "   |   Valor real de la integral: " + str(valor_integral) + "   |   Error: " + str(error_aprox) + "%"
         lista_resultado.append(cadena_resultado)
 
+        #Retornamos la lista que contiene todos los valores de las iteraciones
         return lista_resultado
         
 

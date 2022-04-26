@@ -3,20 +3,24 @@ import sympy as sp
 class Programa_Taylor:
     def Procedimiento_Taylor(self, funcion, x_valor, h, decremento, tolerancia):
         x = sp.Symbol('x')
+        #Derivamos la funcion en terminos de x
         funcion_derivada = sp.diff(funcion, x)
         
         x = x_valor
         valor_real = eval(str(funcion_derivada))
         #print("f'(x) = ", valor_real)
-         
+        
+        #Primera funcion
         def funcion_x(x_valor):
             x = x_valor
             return eval(funcion)
-        
+
+        #Segunda funcion
         def funcion_x1(xi):
             x = xi
             return eval(funcion)
 
+        #Ciclo para realizar las iteraciones
         flag = False
         lista_resultados = []
         contador = 0
@@ -49,6 +53,8 @@ class Programa_Taylor:
         
         for i in lista_resultados:
             print(i)
+        
+        #Retorno la lista que contiene todos los resultados de las iteraciones
         return lista_resultados
 
             
