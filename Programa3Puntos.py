@@ -17,8 +17,6 @@ class Programa_3_puntos:
         #derifada final
         derivada_f = (1/(2*h))*(valor_a + valor_b)
         print("Valor de la derivada aproximada: ",derivada_f)
-        
-        #Comentario sin razon
 
         #Aquí se obtiene el valor real de la derivada
         x = sp.Symbol('x')

@@ -7,6 +7,7 @@ from GUI_Taylor import Gui_Taylor
 from GUI_Trapecio import Gui_Trapecio
 from GUI_Simpson13 import Gui_Simpson13
 from GUI_Simpson38 import Gui_Simpson38
+from GUI_Gauss import Gui_Gauss_Seidel
 class unidad_4:
     def Gui_unidad_4(self):
         # Crea una ventana igual a la unidad 2
@@ -29,6 +30,7 @@ class unidad_4:
                     "Metodo del trapecio",
                     "Metodo de Simpson 1/3",
                     "Metodo de Simpson 3/8",
+                    "Cuadratura de Gauss"
                     ]
         
         desplegable_unidad_3 = ttk.Combobox(self.winu4, width=21, values=options, state="readonly", font="Times", height="1", justify = "center")
@@ -52,6 +54,9 @@ class unidad_4:
                 d = Gui_Simpson38()
                 d.GUI()
             
+            if desplegable_unidad_3.get() == "Cuadratura de Gauss":
+                e = Gui_Gauss_Seidel()
+                e.GUI()
 
         btnAceptar = Button(self.winu4, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
         btnAceptar.place(relx=0.28, rely=0.8)

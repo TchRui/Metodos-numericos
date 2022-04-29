@@ -5,9 +5,9 @@ import numpy as np
 
 from ProgramaGauss import Programa_Gauss_Seiel
 from GUI_Resultados import Resultados
-class GUI_Gauss_Seidel:
+class Gui_Gauss_Seidel:
 
-    def procedimiento_gauss(self):
+    def GUI(self):
         self.winGauss = Toplevel()
         ancho_ventana = 820
         alto_ventana = 380
