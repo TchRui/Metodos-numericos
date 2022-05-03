@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 
 from GUI_jacobi import Gui_metodo_jacobi
-from GUI_Gauss import GUI_Gauss_Seidel
+from GUI_Gauss import Gui_Gauss_Seidel
 from GUI_Newton import GUI_Newton_Raphson
 class unidad_3:
     def Gui_unidad_3(self):
@@ -35,7 +35,7 @@ class unidad_3:
                 j.procedimiento_jacobi()
 
             elif desplegable_unidad_3.get() == "Metodo de Gauss-Seidel":
-                g = GUI_Gauss_Seidel()
+                g = Gui_Gauss_Seidel()
                 g.procedimiento_gauss()
 
             elif desplegable_unidad_3.get() == "Metodo de Newton-Raphson":

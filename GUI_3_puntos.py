@@ -78,3 +78,7 @@ class Gui_tres_puntos:
         btnAceptar.config(activebackground="#94A9B9", width="16", height="1")
 
         gui.mainloop()
+
+if __name__ == "__main__":
+    g = Gui_tres_puntos()
+    g.procedimiento_tres_puntos()
