@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import simpledialog
+from tkinter import messagebox
 
 from GUI_interpilacion_newton_1 import Gui_interpolacionNewton1
 from GUI_interpilacion_newton_2 import Gui_interpolacionNewton2
@@ -52,6 +53,8 @@ class unidad_5:
                 elif n == 3:
                     g = Gui_interpolacionNewton3()
                     g.GUI()
+                elif n < 1 or n > 3:
+                    messagebox.showinfo("Error", "Elija una opción entre 1 y 3")
                     
             if desplegable_unidad_3.get() == "Interpolacion segmetada":
                 pass
