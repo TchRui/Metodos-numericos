@@ -6,6 +6,7 @@ from tkinter import messagebox
 from GUI_interpilacion_newton_1 import Gui_interpolacionNewton1
 from GUI_interpilacion_newton_2 import Gui_interpolacionNewton2
 from GUI_interpilacion_newton_3 import Gui_interpolacionNewton3
+from GUI_interpilacion_Lagrange_2 import Gui_interpolacionLagrage2
 
 class unidad_5:
     def Gui_unidad_5(self):
@@ -21,7 +22,7 @@ class unidad_5:
         winu5.config(bg='#7FADA9')
         winu5.resizable(0, 0)
 
-        lblTitulo = Label(winu5, text="Unidad 4: Polinomios de interpolacion", bg="#CCD9CE", font="Times", width="25", height="2")
+        lblTitulo = Label(winu5, text="Unidad 5: interpolacion", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.place(relx=0.175, rely=0.125)
 
         options = ["Interpolacion de Lagrange",
@@ -37,7 +38,8 @@ class unidad_5:
 
         def funciones():           
             if desplegable_unidad_3.get() == "Interpolacion de Lagrange":
-                pass
+                g = Gui_interpolacionLagrage2()
+                g.GUI()
 
             if desplegable_unidad_3.get() == "Interpolacion de Newton":
                 n = simpledialog.askinteger("Interpolación de Newton","De que longitud será la interpolación de Newton:")

@@ -14,11 +14,11 @@ class Gui_interpolacionNewton3:
         y_ventana = gui.winfo_screenheight() // 2 - alto_ventana // 2
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
         gui.geometry(posicion)
-        gui.title('Estructura de datos - Unidad 5')
+        gui.title('Estructura de datos - Interpolacion de Newton')
         gui.config(bg='#7FADA9')
         gui.resizable(0, 0)
 
-        lblTitulo = Label(gui, text="Interpolacion de Newton", bg="#CCD9CE", font="Times", width="25", height="2")
+        lblTitulo = Label(gui, text="Newton de tercer grado", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.grid(row=0, column=0, columnspan=4,padx=20, pady=15)
 
         lblx1 = Label(gui,text="Primer punto", bg="#CCD9CE", font="Times", width="10", height="1")

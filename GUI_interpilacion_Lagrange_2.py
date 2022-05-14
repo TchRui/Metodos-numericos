@@ -5,7 +5,7 @@ from tkinter import simpledialog
 
 from ProgramaInterpolacionNewton import Programa_Interpolacion_Newton
 
-class Gui_interpolacionNewton2:
+class Gui_interpolacionLagrage2:
     def GUI(self):
         gui = Tk()
         ancho_ventana = 425
@@ -14,11 +14,11 @@ class Gui_interpolacionNewton2:
         y_ventana = gui.winfo_screenheight() // 2 - alto_ventana // 2
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
         gui.geometry(posicion)
-        gui.title('Estructura de datos - Interpolacion de Newton')
+        gui.title('Estructura de datos - Interpolacion de Lagrange')
         gui.config(bg='#7FADA9')
         gui.resizable(0, 0)
 
-        lblTitulo = Label(gui, text="Newton de segundo grado", bg="#CCD9CE", font="Times", width="25", height="2")
+        lblTitulo = Label(gui, text="Lagrange de segundo grado", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.grid(row=0, column=0, columnspan=4,padx=20, pady=15)
 
         lblx1 = Label(gui,text="Primer punto", bg="#CCD9CE", font="Times", width="10", height="1")
@@ -58,62 +58,62 @@ class Gui_interpolacionNewton2:
             try:
                 x1 = cajax1.get()
                 if x1 == "":
-                    messagebox.showerror("Interpolacion de Newton","Error: El primer punto en su campo x se encuentra vacío")
+                    messagebox.showerror("Interpolacion de Lagrange","Error: El primer punto en su campo x se encuentra vacío")
                 else:
                     x1 = int(x1)
                     c1 = True
             except ValueError:
-                messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
+                messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
             
             try:
                 x2 = cajax2.get()
                 if x2 == "":
-                    messagebox.showerror("Interpolacion de Newton","Error: El primer punto en su campo f(x) se encuentra vacío")
+                    messagebox.showerror("Interpolacion de Lagrange","Error: El primer punto en su campo f(x) se encuentra vacío")
                 else:
                     x2 = int(x2)
                     c2 = True
             except ValueError:
-                messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
+                messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
 
             try:
                 y1 = cajay1.get()
                 if y1 == "":
-                    messagebox.showerror("Interpolacion de Newton","Error: El segundo punto en su campo x se encuentra vacío")
+                    messagebox.showerror("Interpolacion de Lagrange","Error: El segundo punto en su campo x se encuentra vacío")
                 else:
                     y1 = int(y1)
                     c3 = True
             except ValueError:
-                messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
+                messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
             
             try:
                 y2 = cajay2.get()
                 if y2 == "":
-                    messagebox.showerror("Interpolacion de Newton","Error: El segundo punto en su campo f(x) se encuentra vacío")
+                    messagebox.showerror("Interpolacion de Lagrange","Error: El segundo punto en su campo f(x) se encuentra vacío")
                 else:
                     y2 = int(y2)
                     c4 = True
             except ValueError:
-                messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
+                messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
             
             try:
                 z1 = cajaz1.get()
                 if z1 == "":
-                    messagebox.showerror("Interpolacion de Newton","Error: El tercer punto en su campo x se encuentra vacío")
+                    messagebox.showerror("Interpolacion de Lagrange","Error: El tercer punto en su campo x se encuentra vacío")
                 else:
                     z1 = int(z1)
                     c5 = True
             except ValueError:
-                messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
+                messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
             
             try:
                 z2 = cajaz2.get()
                 if z2 == "":
-                    messagebox.showerror("Interpolacion de Newton","Error: El tercer punto en su campo f(x) se encuentra vacío")
+                    messagebox.showerror("Interpolacion de Lagrange","Error: El tercer punto en su campo f(x) se encuentra vacío")
                 else:
                     z2 = int(z2)
                     c6 = True
             except ValueError:
-                messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
+                messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
             
             if c1 == True and c2 == True and c3 == True and c4 == True and c5 == True and c6 == True:
                 lista_valores = [[x1,x2],[y1,y2],[z1,z2]]
@@ -129,5 +129,5 @@ class Gui_interpolacionNewton2:
         gui.mainloop()
 
 if __name__ == "__main__":
-    g = Gui_interpolacionNewton2()
+    g = Gui_interpolacionLagrage2()
     g.GUI()
