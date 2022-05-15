@@ -17,7 +17,7 @@ class Gui_regresion_lineal:
         gui.config(bg='#7FADA9')
         gui.resizable(0, 0)
 
-        lblTitulo = Label(gui, text="Regresion lineal", bg="#CCD9CE", font="Times", width="25", height="2")
+        lblTitulo = Label(gui, text="Cuadrados mínimos", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.grid(row=0, column=0, columnspan=2, padx=20, pady=15)
 
        
