@@ -7,6 +7,8 @@ from GUI_interpilacion_newton_1 import Gui_interpolacionNewton1
 from GUI_interpilacion_newton_2 import Gui_interpolacionNewton2
 from GUI_interpilacion_newton_3 import Gui_interpolacionNewton3
 from GUI_interpilacion_Lagrange_2 import Gui_interpolacionLagrage2
+from GUI_Regresion_lineal import Gui_regresion_lineal
+from GUI_Cuadrados_minimos import Gui_cuadrados_minimos
 
 class unidad_5:
     def Gui_unidad_5(self):
@@ -57,15 +59,14 @@ class unidad_5:
                     g.GUI()
                 elif n < 1 or n > 3:
                     messagebox.showinfo("Error", "Elija una opción entre 1 y 3")
-                    
-            if desplegable_unidad_3.get() == "Interpolacion segmetada":
-                pass
 
             if desplegable_unidad_3.get() == "Regresion y correlacion":
-                pass
+                g = Gui_regresion_lineal()
+                g.GUI()
 
             if desplegable_unidad_3.get() == "Minimos cuadrados":
-                pass
+                g = Gui_cuadrados_minimos()
+                g.GUI()
 
         btnAceptar = Button(winu5, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
         btnAceptar.place(relx=0.28, rely=0.8)

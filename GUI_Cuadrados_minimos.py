@@ -4,7 +4,7 @@ from tkinter import messagebox
 from tkinter import simpledialog
 
 from ProgramaRegresionLineal import Programa_regresion_lineal
-class Gui_regresion_lineal:
+class Gui_cuadrados_minimos:
     def GUI(self):
         gui = Tk()
         ancho_ventana = 425
@@ -170,5 +170,5 @@ class Gui_regresion_lineal:
         gui.mainloop()
 
 if __name__ == "__main__":
-    gui = Gui_regresion_lineal()
+    gui = Gui_cuadrados_minimos()
     gui.GUI()
