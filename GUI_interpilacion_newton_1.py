@@ -11,7 +11,7 @@ class Gui_interpolacionNewton1:
         ancho_ventana = 425
         alto_ventana = 285
         x_ventana = gui.winfo_screenwidth() // 2 - ancho_ventana // 2
-        y_ventana = gui.winfo_screenheight() // 2 - alto_ventana // 2
+        y_ventana = (gui.winfo_screenheight() // 2 - alto_ventana // 2) - 42
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
         gui.geometry(posicion)
         gui.title('Estructura de datos - Interpolacion de Newton')
