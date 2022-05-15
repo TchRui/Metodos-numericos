@@ -28,11 +28,15 @@ class Programa_regresion_lineal:
         sigma_xy = suma_xy/n - promedio_x*promedio_y
         regresion_cuadrada = (sigma_xy/(sigma_x*sigma_y))**2
 
+        x_v = sp.Symbol('x')
+        funcion = (m*x_v) + b
+        print('La función de la regresión es: ', funcion)
+
         plt.plot(x, y, 'o', label='Datos')
-        plt.plot(x, m*x + b, 'r', label='Regresion')
+        plt.plot(x, m*x + b, 'r', label='Regresion lineal: ' + str(funcion))
         plt.xlabel('x')
         plt.ylabel('y')
-        plt.title('Regresion lineal')
+        plt.title('Regresion lineal con formula : ' + str(funcion))
         plt.grid(True)
         plt.legend()
         plt.show()
