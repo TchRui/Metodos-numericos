@@ -4,6 +4,8 @@ from math import *
 class Programa_biseccion:
     def Procedimiento_biseccion(self, funcion, xl, xu, tolerancia, iteraciones):
 
+        lista_resultados = []
+
         for i in range(iteraciones):
             m = (xl + xu) /2
             
@@ -18,7 +20,37 @@ class Programa_biseccion:
             #Evaluacion de F en m 
 
             x = m
-            fb = eval(funcion)
+            fm = eval(funcion)
+            
+            #Condiciones de paro
+            if (fa * fm) < 0:
+                error = (xl + xu) /2
+                cadena_resultado = "Iteracion: " + str(i) + "  Xl: " + str(xl) + "  Xu: " + str(xu) + "  Error: " + str(error)
+                lista_resultados.append(cadena_resultado)
+                xu = m
+                
+                if error < tolerancia:
+                    break
+
+
+            elif (fa * fm) > 0:
+                error = (xl + xu) /2
+                cadena_resultado = "Iteracion: " + str(i) + "  Xl: " + str(xl) + "  Xu: " + str(xu) + "  Error: " + str(error)
+                lista_resultados.append(cadena_resultado)
+                xl = m
+
+                if error < tolerancia:
+                    break
+                
+            else:
+                error = (xl + xu) /2
+                cadena_resultado = "Iteracion: " + str(i) + "  Xl: " + str(xl) + "  Xu: " + str(xu) + "  Error: " + str(error)
+                lista_resultados.append(cadena_resultado)
+                break
+            
+        for i in lista_resultados:
+            print(i)
+
             
         
 
