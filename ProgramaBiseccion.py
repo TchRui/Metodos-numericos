@@ -44,12 +44,11 @@ class Programa_biseccion:
                 
             else:
                 error = (xl + xu) /2
-                cadena_resultado = "Iteracion: " + str(i) + "  Xl: " + str(xl) + "  Xu: " + str(xu) + "  Error: " + str(error)
+                cadena_resultado = "Iteracion: " + str(i) + "   | Xl: " + str(xl) + "   | Xu: " + str(xu) + "   | Error: " + str(error)
                 lista_resultados.append(cadena_resultado)
                 break
-            
-        for i in lista_resultados:
-            print(i)
+
+        return lista_resultados
 
             
         
