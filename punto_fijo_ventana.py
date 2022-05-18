@@ -2,11 +2,13 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox as msb
 
-from punto_fijo_exp import procedimiento_exp
+from math import *
+from Programa_Punto_Fijo import Programa_punto_fijo
+from GUI_Resultados import Resultados
 
 class entorno_punto_fijo:
     def principal_punto_fijo(self):
-        punto_fijo_window = Toplevel()
+        punto_fijo_window = Tk()
 
         ancho_ventana = 425
         alto_ventana = 400
@@ -19,22 +21,73 @@ class entorno_punto_fijo:
         punto_fijo_window.config(bg='#7FADA9')
         punto_fijo_window.resizable(0, 0)
 
-        lblTitulo = Label(punto_fijo_window, text="Unidad 2: Método del punto fijo", bg="#CCD9CE", font="Times", width="25", height="2")
-        lblTitulo.place(relx=0.175, rely=0.125)
+        lblTitulo = Label(punto_fijo_window, text="Unidad 2: Método del punto fijo", bg="#CCD9CE", font="Times", width="28", height="2")
+        lblTitulo.grid(row=0, column=0, columnspan=4, padx=55, pady=15)
 
-        options =["Ecuación exp(-x)-x"]
+        lblFuncion = Label(punto_fijo_window, text="Función:", bg="#CCD9CE", font="Times", width="8", height="1")
+        lblFuncion.grid(row=1, column=0, padx=55, pady=15)
 
-        cmb = ttk.Combobox(punto_fijo_window, width=21, values=options, state="readonly", font = "Times", height="1", justify = "center")
-        cmb.place(relx=0.215,rely=0.475)
-        cmb.current(0)
+        cajafuncion = Variable()
+        cajafuncion = Entry(punto_fijo_window, width=10, font="Times", justify="center", textvariable=cajafuncion)
+        cajafuncion.grid(row=1, column=1, padx=20, pady=15)
+
+        lblX0 = Label(punto_fijo_window, text="X0:", bg="#CCD9CE", font="Times", width="8", height="1")
+        lblX0.grid(row=2, column=0, padx=55, pady=15)
+
+        cajaX0 = Variable()
+        cajaX0 = Entry(punto_fijo_window, width=10, font="Times", justify="center", textvariable=cajaX0)
+        cajaX0.grid(row=2, column=1, padx=20, pady=15)
+
+        lblTolerancia = Label(punto_fijo_window, text="Tolerancia:", bg="#CCD9CE", font="Times", width="8", height="1")
+        lblTolerancia.grid(row=3, column=0, padx=55, pady=15)
+
+        cajaTolerancia = Variable()
+        cajaTolerancia = Entry(punto_fijo_window, width=10, font="Times", justify="center", textvariable=cajaTolerancia)
+        cajaTolerancia.grid(row=3, column=1, padx=20, pady=15)
+
+        lblIteraciones = Label(punto_fijo_window, text="Iteraciones:", bg="#CCD9CE", font="Times", width="8", height="1")
+        lblIteraciones.grid(row=4, column=0, padx=55, pady=15)
+
+        cajaIteraciones = Variable()
+        cajaIteraciones = Entry(punto_fijo_window, width=10, font="Times", justify="center", textvariable=cajaIteraciones)
+        cajaIteraciones.grid(row=4, column=1, padx=20, pady=15)
 
         def opciones():
-            if cmb.get() == "Ecuación exp(-x)-x":
-                p1 = procedimiento_exp()
-                p1.procedimiento()
+            if cajafuncion.get() == "":
+                msb.showerror("Error", "Ingrese una función valida para continuar")
+            
+            try:
+                if float(cajaX0.get()) == 0:
+                    msb.showerror("Error", "Ingrese un valor diferente de 0 para continuar")
+            except:
+                msb.showerror("Error", "Ingrese un valor numerico para continuar")
+            
+            try:
+                if float(cajaTolerancia.get()) == 0:
+                    msb.showerror("Error", "Ingrese un valor diferente de 0 para continuar")
+            except:
+                msb.showerror("Error", "Ingrese un valor numerico para continuar")
+            
+            try:
+                if float(cajaIteraciones.get()) == 0:
+                    msb.showerror("Error", "Ingrese un valor diferente de 0 para continuar")
+            except:
+                msb.showerror("Error", "Ingrese un valor numerico para continuar")
+            
+            g = Programa_punto_fijo()
+            lista = g.Procedimiento_punto_fijo(cajafuncion.get(), float(cajaX0.get()), float(cajaTolerancia.get()), int(cajaIteraciones.get()))
+            
+            r =Resultados()
+            r.mostrar(lista)
 
-        boption = Button(punto_fijo_window, text="Ingresar", bg='#CCD9CE', command=opciones, font="Times", )
-        boption.place(relx=0.28, rely=0.8)
+
+        
+        boption = Button(punto_fijo_window, text="Ingresar", bg='#CCD9CE', command=opciones, font="Times",borderwidth=0)
+        boption.grid(row=5, column=0, columnspan=2, padx=20, pady=15)
         boption.config(activebackground="#94A9B9", width="16", height="1")
 
         punto_fijo_window.mainloop()
+
+if __name__ == '__main__':
+    ventana = entorno_punto_fijo()
+    ventana.principal_punto_fijo()

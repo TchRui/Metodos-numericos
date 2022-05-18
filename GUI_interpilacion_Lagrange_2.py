@@ -60,7 +60,7 @@ class Gui_interpolacionLagrage2:
                 if x1 == "":
                     messagebox.showerror("Interpolacion de Lagrange","Error: El primer punto en su campo x se encuentra vacío")
                 else:
-                    x1 = int(x1)
+                    x1 = float(x1)
                     c1 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
@@ -70,7 +70,7 @@ class Gui_interpolacionLagrage2:
                 if x2 == "":
                     messagebox.showerror("Interpolacion de Lagrange","Error: El primer punto en su campo f(x) se encuentra vacío")
                 else:
-                    x2 = int(x2)
+                    x2 = float(x2)
                     c2 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
@@ -80,7 +80,7 @@ class Gui_interpolacionLagrage2:
                 if y1 == "":
                     messagebox.showerror("Interpolacion de Lagrange","Error: El segundo punto en su campo x se encuentra vacío")
                 else:
-                    y1 = int(y1)
+                    y1 = float(y1)
                     c3 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
@@ -90,7 +90,7 @@ class Gui_interpolacionLagrage2:
                 if y2 == "":
                     messagebox.showerror("Interpolacion de Lagrange","Error: El segundo punto en su campo f(x) se encuentra vacío")
                 else:
-                    y2 = int(y2)
+                    y2 = float(y2)
                     c4 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
@@ -100,7 +100,7 @@ class Gui_interpolacionLagrage2:
                 if z1 == "":
                     messagebox.showerror("Interpolacion de Lagrange","Error: El tercer punto en su campo x se encuentra vacío")
                 else:
-                    z1 = int(z1)
+                    z1 = float(z1)
                     c5 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")
@@ -110,7 +110,7 @@ class Gui_interpolacionLagrage2:
                 if z2 == "":
                     messagebox.showerror("Interpolacion de Lagrange","Error: El tercer punto en su campo f(x) se encuentra vacío")
                 else:
-                    z2 = int(z2)
+                    z2 = float(z2)
                     c6 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Lagrange","Error: Debe ingresar solo valores numéricos.")

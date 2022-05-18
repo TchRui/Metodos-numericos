@@ -29,7 +29,6 @@ class unidad_5:
 
         options = ["Interpolacion de Lagrange",
                     "Interpolacion de Newton",
-                    "Interpolacion segmetada",
                     "Regresion y correlacion",
                     "Minimos cuadrados",
                     ]

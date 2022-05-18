@@ -49,7 +49,7 @@ class Gui_interpolacionNewton1:
                 if x1 == "":
                     messagebox.showerror("Interpolacion de Newton","Error: El primer punto en su campo x se encuentra vacío")
                 else:
-                    x1 = int(x1)
+                    x1 = float(x1)
                     c1 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
@@ -59,7 +59,7 @@ class Gui_interpolacionNewton1:
                 if x2 == "":
                     messagebox.showerror("Interpolacion de Newton","Error: El primer punto en su campo f(x) se encuentra vacío")
                 else:
-                    x2 = int(x2)
+                    x2 = float(x2)
                     c2 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
@@ -69,7 +69,7 @@ class Gui_interpolacionNewton1:
                 if y1 == "":
                     messagebox.showerror("Interpolacion de Newton","Error: El segundo punto en su campo x se encuentra vacío")
                 else:
-                    y1 = int(y1)
+                    y1 = float(y1)
                     c3 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
@@ -79,7 +79,7 @@ class Gui_interpolacionNewton1:
                 if y2 == "":
                     messagebox.showerror("Interpolacion de Newton","Error: El segundo punto en su campo f(x) se encuentra vacío")
                 else:
-                    y2 = int(y2)
+                    y2 = float(y2)
                     c4 = True
             except ValueError:
                 messagebox.showerror("Interpolacion de Newton","Error: Debe ingresar solo valores numéricos.")
