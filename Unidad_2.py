@@ -8,6 +8,8 @@ from Reduccion_window_variables import entorno_reduccion
 from Igualacion_window_variables import  entorno_igualacion
 from sustitucion_window_variables import entorno_sustitucion
 from punto_fijo_ventana import entorno_punto_fijo
+from GUI_biseccion import Gui_biseccion
+
 '''import graficadora'''
 class unidad_2:
     def principal_unidad_2(self):
@@ -31,9 +33,8 @@ class unidad_2:
             "Reduccion",
             "Igualacion",
             "Sustitucion",
-            "Metodo grafico",
             "Punto fijo",
-            "Interpolacion",
+            "Falsa posicion",
             "Biseccion", 
         ]
 
@@ -61,15 +62,17 @@ class unidad_2:
             '''if desplegable_unidad_2.get() == "Metodo grafico":
                 i = graficadora'''
 
-            if desplegable_unidad_2.get() == "Interpolacion":
+            if desplegable_unidad_2.get() == "Falsa posicion":
                 pass
 
             if desplegable_unidad_2.get() == "Biseccion":
-                pass
+                b = Gui_biseccion()
+                b.GUI()
 
         boption = Button(self.winU2, text="Seleccionar Programa", bg='#CCD9CE', command=funciones, font="Times")
         boption.place(relx=0.28, rely=0.8)
         boption.config(activebackground="#94A9B9", width="16", height="1")
 
-u2 = unidad_2()
-
+if __name__ == "__main__":
+    z = unidad_2()
+    z.principal_unidad_2()

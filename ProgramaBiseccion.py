@@ -25,7 +25,7 @@ class Programa_biseccion:
             #Condiciones de paro
             if (fa * fm) < 0:
                 error = (xl + xu) /2
-                cadena_resultado = "Iteracion: " + str(i) + "  Xl: " + str(xl) + "  Xu: " + str(xu) + "  Error: " + str(error)
+                cadena_resultado = "Iteracion: " + str(i) + "   | Xl: " + str(xl) + "   | Xu: " + str(xu) + "   | Error: " + str(error)
                 lista_resultados.append(cadena_resultado)
                 xu = m
                 
@@ -35,7 +35,7 @@ class Programa_biseccion:
 
             elif (fa * fm) > 0:
                 error = (xl + xu) /2
-                cadena_resultado = "Iteracion: " + str(i) + "  Xl: " + str(xl) + "  Xu: " + str(xu) + "  Error: " + str(error)
+                cadena_resultado = "Iteracion: " + str(i) + "   | Xl: " + str(xl) + "   | Xu: " + str(xu) + "   | Error: " + str(error)
                 lista_resultados.append(cadena_resultado)
                 xl = m
 
