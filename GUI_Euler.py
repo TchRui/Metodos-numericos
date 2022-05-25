@@ -43,7 +43,7 @@ class Gui_Euler:
         cajaxe = Entry(gui, width=20, textvariable=cajaxe, font="Times",justify="center")
         cajaxe.grid(row=3, column=1, padx=20, pady=15)
 
-        lblyi = Label(gui,text="Y inicial",bg="#CCD9CE", font="Times", width="10", height="1")
+        lblyi = Label(gui,text="y inicial",bg="#CCD9CE", font="Times", width="10", height="1")
         lblyi.grid(row=4,column=0,padx=20,pady=15)
 
         cajayi = StringVar()
