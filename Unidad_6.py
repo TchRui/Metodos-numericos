@@ -3,8 +3,12 @@ from tkinter import ttk
 from tkinter import simpledialog
 from tkinter import messagebox
 
+from GUI_Euler import Gui_Euler
+from GUI_Heun import Gui_Heun
+from GUI_ecuaciones_taylor import Gui_ecuaciones_taylor
+
 class unidad_6:
-    def Gui_unidad_6:
+    def Gui_unidad_6(self):
         winU6 = Tk()
         ancho_ventana = 425
         alto_ventana = 400
@@ -20,7 +24,8 @@ class unidad_6:
         lblTitulo.place(relx=0.175, rely=0.125)
 
         options = ["Metodo de Euler",
-                    ""
+                    "Series de Taylor",
+                    "Metodo Heun"
                     ]
         
         desplegable_unidad_3 = ttk.Combobox(winU6, width=21, values=options, state="readonly", font="Times", height="1", justify = "center")
@@ -28,10 +33,18 @@ class unidad_6:
         desplegable_unidad_3.current(0)
 
         def funciones():           
-            pass
+            if desplegable_unidad_3.get() == "Metodo de Euler":
+                Gui_Euler().GUI()
+            
+            elif desplegable_unidad_3.get() == "Series de Taylor":
+                Gui_ecuaciones_taylor().GUI()
+            
+            elif desplegable_unidad_3.get() == "Metodo Heun":
+                Gui_Heun().GUI()
+                
 
         btnAceptar = Button(winU6, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
         btnAceptar.place(relx=0.28, rely=0.8)
         btnAceptar.config(activebackground="#94A9B9", width="16", height="1")
 
-        winU6.mainloop() 
+        winU6.mainloop()
