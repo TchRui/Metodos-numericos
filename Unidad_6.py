@@ -4,7 +4,7 @@ from tkinter import simpledialog
 from tkinter import messagebox
 
 from GUI_Euler import Gui_Euler
-from GUI_Heun import Gui_Heun
+from GUI_Heun import Gui_Euler_Mejorado
 from GUI_ecuaciones_taylor import Gui_ecuaciones_taylor
 
 class unidad_6:
@@ -13,7 +13,7 @@ class unidad_6:
         ancho_ventana = 425
         alto_ventana = 400
         x_ventana = winU6.winfo_screenwidth() // 2 - ancho_ventana // 2
-        y_ventana = winU6.winfo_screenheight() // 2 - alto_ventana // 2
+        y_ventana = winU6.winfo_screenheight() // 2 - alto_ventana // 2 - 42
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
         winU6.geometry(posicion)
         winU6.title('Estructura de datos - Unidad 5')
@@ -40,7 +40,7 @@ class unidad_6:
                 Gui_ecuaciones_taylor().GUI()
             
             elif desplegable_unidad_3.get() == "Metodo Heun":
-                Gui_Heun().GUI()
+                Gui_Euler_Mejorado().GUI()
                 
 
         btnAceptar = Button(winU6, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')

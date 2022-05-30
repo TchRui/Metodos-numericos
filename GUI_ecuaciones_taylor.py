@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 from ProgramaEcuacionesTaylor import Programa_Ecuaciones_Taylor
 
-class Gui_Ecuaciones_Taylor:
+class Gui_ecuaciones_taylor:
     def GUI(self):
         gui = Tk()
         ancho_ventana = 425

@@ -18,7 +18,7 @@ class unidad_2:
         ancho_ventana = 425
         alto_ventana = 400
         x_ventana = self.winU2.winfo_screenwidth() // 2 - ancho_ventana // 2
-        y_ventana = self.winU2.winfo_screenheight() // 2 - alto_ventana // 2
+        y_ventana = self.winU2.winfo_screenheight() // 2 - alto_ventana // 2 - 42
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
         self.winU2.geometry(posicion)
 
