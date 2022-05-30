@@ -16,11 +16,11 @@ class unidad_6:
         y_ventana = winU6.winfo_screenheight() // 2 - alto_ventana // 2 - 42
         posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
         winU6.geometry(posicion)
-        winU6.title('Estructura de datos - Unidad 5')
+        winU6.title('Estructura de datos - Unidad 6')
         winU6.config(bg='#7FADA9')
         winU6.resizable(0, 0)
 
-        lblTitulo = Label(winU6, text="Unidad 5: interpolacion", bg="#CCD9CE", font="Times", width="25", height="2")
+        lblTitulo = Label(winU6, text="Unidad 6: S.Ecuaciones", bg="#CCD9CE", font="Times", width="25", height="2")
         lblTitulo.place(relx=0.175, rely=0.125)
 
         options = ["Metodo de Euler",
@@ -48,3 +48,6 @@ class unidad_6:
         btnAceptar.config(activebackground="#94A9B9", width="16", height="1")
 
         winU6.mainloop()
+if __name__ == "__main__":
+    g = unidad_6()
+    g.Gui_unidad_6()

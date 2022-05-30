@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+import sympy as sp
 
 from ProgramaEcuacionesTaylor import Programa_Ecuaciones_Taylor
 
@@ -63,7 +64,7 @@ class Gui_ecuaciones_taylor:
                 messagebox.showinfo("Error", "Ingrese un valor numérico")
 
             p = Programa_Ecuaciones_Taylor()
-            p.ecuaciones_taylor(funcion, n, h)
+            p.Procedimiento_Ecuaciones_Taylor(funcion, n, h)
 
         btnAceptar = Button(gui, text="Aceptar", command=funciones, width=10, height=1, font="Times", bg = '#CCD9CE')
         btnAceptar.grid(row=6, column=0,columnspan=3,padx=70, pady=15)
